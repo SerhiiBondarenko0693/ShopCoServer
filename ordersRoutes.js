@@ -1,5 +1,5 @@
 const {client} = require("./db");
-const {sendMailServisMassage, sendMailServiseLink} = require("./sendMailServise/sendMailServise")
+// const {sendMailServisMassage, sendMailServiseLink} = require("./sendMailServise/sendMailServise")
 
 const ordersDB = client.db('shopco').collection('orders')
 
@@ -8,7 +8,7 @@ const ordersAdd = async (req, res) => {
         const good = req.body;
         const data = await ordersDB.insertOne(good);
         // sendMailServisMassage("sergiy.ol.bondarenko@gmail.com", "Пошта дан","Пошта дан" )
-        sendMailServiseLink("sergiy.ol.bondarenko@gmail.com", "https://www.google.com.ua/?hl=uk")
+        // sendMailServiseLink("sergiy.ol.bondarenko@gmail.com", "https://www.google.com.ua/?hl=uk")
 
         res.send({
             status: 200,
