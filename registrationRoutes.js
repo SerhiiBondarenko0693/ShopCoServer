@@ -1,6 +1,7 @@
 const {client} = require("./db")
 const bcrypt = require('bcrypt');
 const {validationResult } = require('express-validator');
+const {sendMailServiceLink} = require("./sendMailServise/sendMailServise");
 
 
 const usersDB = client.db('shopco').collection('users')
@@ -32,8 +33,8 @@ const registrationUser = async (req, res) =>{
             const {insertedId} = await usersDB.insertOne(candidate);
             console.log("insertedId", insertedId);
 
-            // send(email,
-            //     ` https://shopcoserver-git-main-chesterfalmen.vercel.app/api/activate/${insertedId}`)
+            sendMailServiceLink(email,
+                `https://shop-co-server-git-main-serhii-bondarenko1.vercel.app//api/activate/${insertedId}`)
 
             return res.send({
                 status: 200,
