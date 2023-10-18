@@ -1,6 +1,7 @@
 const {client} = require("./db")
 const bcrypt = require('bcrypt');
-const {validationResult } = require('express-validator')
+const {validationResult } = require('express-validator');
+
 const {sendMailServiceLink} = require("./sendMailServise/sendMailServise");
 
 
@@ -46,6 +47,7 @@ const registrationUser = async (req, res) =>{
     }
 
 }
+
 
 module.exports = {
     registrationUser
