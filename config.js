@@ -12,5 +12,4 @@
 const MONGO_CONNECTION_STRING = process.env.MONGO
 const GMAIL_CONNECTION_STRING = process.env.GMAIL
 const URI = process.env.URI
-
 module.exports = {MONGO_CONNECTION_STRING,GMAIL_CONNECTION_STRING,URI }
